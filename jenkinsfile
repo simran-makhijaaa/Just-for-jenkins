@@ -10,21 +10,21 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'buildddddddddddddddddd...'
+                echo 'builddd...'
                
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing...'
+                echo 'testttttttttttttttt...'
                 
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                echo 'deployyyyyyyyyyyyyyyy...'
                 
             }
         }
