@@ -10,22 +10,22 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building...'
-                // Add your build commands here
+                echo 'buildddddddddddddddddd...'
+               
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Testing...'
-                // Add your test commands here
+                
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                // Add your deployment commands here
+                
             }
         }
     }
