@@ -1,2 +1,0 @@
-echo "Hiiiiiiiiiiiii"
-echo "Byeeeeeee"
