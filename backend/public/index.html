@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>Users List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id="user-table-body">
+    </tbody>
+  </table>
+
+  <script>
+    async function fetchUsers() {
+      try {
+        const response = await fetch('/users');
+        const users = await response.json();
+        const tableBody = document.getElementById('user-table-body');
+        tableBody.innerHTML = '';
+        users.forEach(user => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } catch (err) {
+        console.error('Error fetching users:', err);
+      }
+    }
+
+    // Fetch users when the page loads
+    fetchUsers();
+  </script>
+</body>
+</html>
