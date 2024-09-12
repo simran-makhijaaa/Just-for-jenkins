@@ -56,4 +56,19 @@ app.get('/fetch-user', async (req, res) => {
 });
 
 // Endpoint to get all users from the database
-app
+app.get('/users', (req, res) => {
+  const sql = 'SELECT * FROM users';
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error('Error fetching users:', err);
+      res.status(500).send('Error fetching users');
+      return;
+    }
+    res.json(results);
+  });
+});
+
+// Start the server
+app.listen(port, '0.0.0.0', () => {
+  console.log(`App running on port ${port}`);
+});
