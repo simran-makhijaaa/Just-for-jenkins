@@ -20,8 +20,8 @@ services:
     ports:
      - "3306:3306"  
     volumes:
-     - db-dataa:/var/lib/mysql  
+     - db-data:/var/lib/mysql  
 
 volumes:
-    db-dataa:
+    db-data:
       
